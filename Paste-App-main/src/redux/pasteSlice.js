@@ -13,7 +13,7 @@ export const pasteSlice = createSlice({
   reducers: {
     addToPastes: (state, action) => {
       const paste = action.payload;
-      state.pastes.push(paste);
+      state.pastes.unshift(paste);
       localStorage.setItem("pastes", JSON.stringify(state.pastes));
       toast.success("Paste created successfully");
     },
